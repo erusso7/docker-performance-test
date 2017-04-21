@@ -7,7 +7,7 @@ Dummy application to compare the performance when using mounted vs unmounted vol
     docker-compose up #Enjoy :) 
 ```
 
-### My results:
+### MacBook Pro results:
 Using a MacBook Pro 
 + Intel Core i7 2,5GHz 
 + 16GB 1600 DDR3
@@ -34,8 +34,20 @@ mounted_1  | Elapsed time: 23.096600055695s with external storage.
 
 ```
 
+### Linux results:
+Using
++ Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
++ 16GB 1600 DDR3
++ SSD 250GB
 
-#### What does this script do?:
+#### Docker
+```
+⇒  docker-compose up 
+basic_1    | Elapsed time: 1.9842998981476s with internal storage.
+mounted_1  | Elapsed time: 3.0894999504089s with external storage.
+```
+
+### What does this script do?:
 * Foreach `THREAD`
     * Foreach `ITERATION`
         - Generate a `UUID::uuid4()`
