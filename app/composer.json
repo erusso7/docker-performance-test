@@ -1,0 +1,14 @@
+{
+    "name": "erusso/docker-perfomance",
+    "type": "project",
+    "require": {
+        "ramsey/uuid": "^3.6",
+        "php": "^7.1"
+    },
+    "authors": [
+        {
+            "name": "Ezequiel Russo",
+            "email": "erusso87@gmail.com"
+        }
+    ]
+}

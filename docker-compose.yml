@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    basic:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            - THREADS=100
+            - DESTINATION=internal
+            - ITERATIONS=250
+
+    mounted:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            - THREADS=100
+            - DESTINATION=external
+            - ITERATIONS=250
+        volumes:
+            - ./mounted:/app/external
