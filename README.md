@@ -49,9 +49,14 @@ mounted_1  | Elapsed time: 3.0894999504089s with external storage.
 
 ### What does this script do?:
 * Foreach `THREAD`
-    * Foreach `ITERATION`
-        - Generate a `UUID::uuid4()`
+    * It will iterate from 0 to `LIMIT` and do:
+        - Generate a `random_bytes` string
         - Generate a IV for AES-256-CBC algorithm
         - Encrypt the UUID with AES-256-CBC and openssl
         - Store the result in a file
     * Delete the file
+
+### Default config values:
+
+* **100** threads
+* **250** iterations
