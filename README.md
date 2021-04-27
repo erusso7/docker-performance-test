@@ -47,6 +47,19 @@ basic_1    | Elapsed time: 1.9842998981476s with internal storage.
 mounted_1  | Elapsed time: 3.0894999504089s with external storage.
 ```
 
+### Window results:
+Using
++ AMD Ryzen 5 3600XT 6-Core Processor 3.8GHz
++ 32GB 3200 DDR4
++ M.2 512GB
+
+#### Docker (Running in Ubuntu with WSL 2)
+```
+$ docker-compose up
+basic_1    | Elapsed time: 0.32800006866455s with internal storage.
+mounted_1  | Elapsed time: 0.37349987030029s with mounted storage.
+```
+
 ### What does this script do?:
 * Foreach `THREAD`
     * It will iterate from 0 to `LIMIT` and do:
