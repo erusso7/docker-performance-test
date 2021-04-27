@@ -1,22 +1,25 @@
-version: '2'
+version: '3'
 
 services:
-    basic:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        environment:
-            - THREADS=100
-            - DESTINATION=internal
-            - ITERATIONS=250
+  basic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - THREADS=100
+      - FOLDER=internal
+      - LIMIT=250
 
-    mounted:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        environment:
-            - THREADS=100
-            - DESTINATION=external
-            - ITERATIONS=250
-        volumes:
-            - ./mounted:/app/external
+  mounted:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - THREADS=100
+      - FOLDER=mounted
+      - LIMIT=250
+    volumes:
+      - data:/app/mounted
+
+volumes:
+  data:
